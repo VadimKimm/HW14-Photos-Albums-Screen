@@ -85,6 +85,8 @@ extension AlbumViewController {
             case .sharedAlbums:
                 return self.createSharedAlbumsSectionLayout()
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 return self.createListSectionLayout()
             }
         }
