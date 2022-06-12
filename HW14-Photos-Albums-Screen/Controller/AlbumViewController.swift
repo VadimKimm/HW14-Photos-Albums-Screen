@@ -33,7 +33,6 @@ class AlbumViewController: UIViewController {
         setupHierarchy()
         setupLayout()
         setupView()
-
     }
 
     // MARK: - Settings -

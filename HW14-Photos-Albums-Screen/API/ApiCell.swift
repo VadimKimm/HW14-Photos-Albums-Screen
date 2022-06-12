@@ -22,7 +22,6 @@ struct ApiCell {
         ]
     }
 
-
     static func getCellsForSharedAlbumsSection() -> [CellModel] {
         return [
             CellModel(imageName: "image9", labelName: "People", labelCount: "132"),
