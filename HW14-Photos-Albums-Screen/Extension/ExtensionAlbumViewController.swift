@@ -55,13 +55,16 @@ extension AlbumViewController {
 
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, CellModel> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, CellModel>()
-        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums])
+        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums, Section.mediatypes])
 
         let itemsForMyAlbumSection = ApiCell.getCellsForMyAlbumSection()
         snapshot.appendItems(itemsForMyAlbumSection, toSection: .myAlbums)
 
         let itemsForPeopleAndPlacesSection = ApiCell.getCellsForSharedAlbumsSection()
         snapshot.appendItems(itemsForPeopleAndPlacesSection, toSection: .sharedAlbums)
+
+        let itemsForMediaTypesSection = ApiCell.getCellsForMediaTypesSection()
+        snapshot.appendItems(itemsForMediaTypesSection, toSection: .mediatypes)
 
         return snapshot
     }
