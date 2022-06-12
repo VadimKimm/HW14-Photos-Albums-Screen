@@ -16,6 +16,8 @@
 		DD1364C02856481F002C8818 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364BF2856481F002C8818 /* AlbumViewController.swift */; };
 		DD1364C228564C68002C8818 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */; };
 		DD1364C428564D1E002C8818 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C328564D1E002C8818 /* CellModel.swift */; };
+		DD1364C728564DA7002C8818 /* ExtensionAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C628564DA7002C8818 /* ExtensionAlbumViewController.swift */; };
+		DD1364CA28564F06002C8818 /* ApiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C928564F06002C8818 /* ApiCell.swift */; };
 		DD1364CC285650C1002C8818 /* PhotoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		DD1364BF2856481F002C8818 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD1364C328564D1E002C8818 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DD1364C628564DA7002C8818 /* ExtensionAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlbumViewController.swift; sourceTree = "<group>"; };
+		DD1364C928564F06002C8818 /* ApiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCell.swift; sourceTree = "<group>"; };
 		DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHeaderView.swift; sourceTree = "<group>"; };
 		EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.release.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,9 +90,11 @@
 		DD1364A62856424E002C8818 /* HW14-Photos-Albums-Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DD1364C828564EF3002C8818 /* API */,
 				DD1364BE285644D3002C8818 /* Model */,
 				DD1364BD285644CF002C8818 /* View */,
 				DD1364BC285644C7002C8818 /* Controller */,
+				DD1364C528564D98002C8818 /* Extension */,
 				DD1364BB285644BD002C8818 /* Resourses */,
 			);
 			path = "HW14-Photos-Albums-Screen";
@@ -130,6 +136,22 @@
 				DD1364C328564D1E002C8818 /* CellModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DD1364C528564D98002C8818 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD1364C628564DA7002C8818 /* ExtensionAlbumViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DD1364C828564EF3002C8818 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DD1364C928564F06002C8818 /* ApiCell.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +271,11 @@
 				DD1364CC285650C1002C8818 /* PhotoHeaderView.swift in Sources */,
 				DD1364C02856481F002C8818 /* AlbumViewController.swift in Sources */,
 				DD1364C228564C68002C8818 /* PhotoCollectionViewCell.swift in Sources */,
+				DD1364CA28564F06002C8818 /* ApiCell.swift in Sources */,
 				DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */,
 				DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */,
 				DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */,
+				DD1364C728564DA7002C8818 /* ExtensionAlbumViewController.swift in Sources */,
 				DD1364C428564D1E002C8818 /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
