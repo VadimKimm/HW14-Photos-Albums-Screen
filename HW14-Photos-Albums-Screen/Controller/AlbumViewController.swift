@@ -10,10 +10,14 @@ import SnapKit
 
 class AlbumViewController: UIViewController {
 
+    var collectionView: UICollectionView! = nil
+
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        configureCollectionView()
 
         setupHierarchy()
         setupLayout()
@@ -24,15 +28,21 @@ class AlbumViewController: UIViewController {
     // MARK: - Settings -
 
     private func setupHierarchy() {
+        view.addSubview(collectionView)
     }
 
     private func setupLayout() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     private func setupView() {
         title = "Albums"
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.systemBackground
         setupNavigationController()
+        collectionView.backgroundColor = .green
     }
 
     // MARK: - Private functions -
@@ -42,6 +52,11 @@ class AlbumViewController: UIViewController {
         navigationItem.setLeftBarButton(addButton, animated: false)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = true
+    }
+
+    private func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewLayout())
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
     @objc private func addButtonClick() {
