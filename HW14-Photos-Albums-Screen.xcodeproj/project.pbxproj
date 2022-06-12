@@ -16,6 +16,7 @@
 		DD1364C02856481F002C8818 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364BF2856481F002C8818 /* AlbumViewController.swift */; };
 		DD1364C228564C68002C8818 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */; };
 		DD1364C428564D1E002C8818 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C328564D1E002C8818 /* CellModel.swift */; };
+		DD1364CC285650C1002C8818 /* PhotoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DD1364BF2856481F002C8818 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD1364C328564D1E002C8818 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHeaderView.swift; sourceTree = "<group>"; };
 		EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.release.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */,
+				DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1364CC285650C1002C8818 /* PhotoHeaderView.swift in Sources */,
 				DD1364C02856481F002C8818 /* AlbumViewController.swift in Sources */,
 				DD1364C228564C68002C8818 /* PhotoCollectionViewCell.swift in Sources */,
 				DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */,
