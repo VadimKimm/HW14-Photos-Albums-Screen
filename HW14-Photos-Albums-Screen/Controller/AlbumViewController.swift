@@ -14,6 +14,7 @@ class AlbumViewController: UIViewController {
         case myAlbums = "My Albums"
         case sharedAlbums = "Shared Albums"
         case mediatypes = "Media Types"
+        case utilities = "Utilities"
     }
 
     static let sectionHeaderElementKind = "section-header-element-kind"
