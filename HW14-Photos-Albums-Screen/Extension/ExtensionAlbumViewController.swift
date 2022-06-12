@@ -73,6 +73,8 @@ extension AlbumViewController {
                 return self.createMyAlbumsSectionLayout()
             case .sharedAlbums:
                 return self.createSharedAlbumsSectionLayout()
+            case .mediatypes:
+                return self.createListSectionLayout()
             }
         }
 
@@ -125,6 +127,26 @@ extension AlbumViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
         section.boundarySupplementaryItems = [headerSection]
         section.orthogonalScrollingBehavior = .groupPaging
+
+        return section
+    }
+
+    private func createListSectionLayout() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.13))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(52))
+        let headerSection = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: AlbumViewController.sectionHeaderElementKind,
+                                                                        alignment: .topLeading)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 30, trailing: 0)
+        section.boundarySupplementaryItems = [headerSection]
 
         return section
     }
