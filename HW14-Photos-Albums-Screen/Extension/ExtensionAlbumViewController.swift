@@ -18,6 +18,8 @@ extension AlbumViewController {
             let sectionType = Section.allCases[indexPath.section]
             switch sectionType {
             case .myAlbums:
+                fallthrough
+            case .sharedAlbums:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
@@ -31,6 +33,8 @@ extension AlbumViewController {
             let sectionType = Section.allCases[indexPath.section]
             switch sectionType {
             case .myAlbums:
+                fallthrough
+            case .sharedAlbums:
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PhotoHeaderView.identifier, for: indexPath) as? PhotoHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
