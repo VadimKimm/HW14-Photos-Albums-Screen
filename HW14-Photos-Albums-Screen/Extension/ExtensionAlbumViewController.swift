@@ -23,6 +23,10 @@ extension AlbumViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
+            case .mediatypes:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as? ListCollectionViewCell else { fatalError() }
+                cell.configure(with: itemIdentifier)
+                return cell
             }
         }
 
@@ -36,6 +40,10 @@ extension AlbumViewController {
                 fallthrough
             case .sharedAlbums:
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PhotoHeaderView.identifier, for: indexPath) as? PhotoHeaderView else { fatalError() }
+                supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
+                return supplementaryView
+            case .mediatypes:
+                guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ListHeaderView.identifier, for: indexPath) as? ListHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
             }
