@@ -27,12 +27,15 @@ class MainTabBarController: UITabBarController {
     private func setupHierarchy() {
         libraryVC = createViewController(title: "Library", imageName: "photo.fill.on.rectangle.fill", tag: 0)
         forYouVC = createViewController(title: "For You", imageName: "heart.text.square.fill", tag: 1)
-        albumVC = createViewController(title: "Albums", imageName: "rectangle.stack.fill", tag: 2)
+        albumVC = AlbumViewController()
+        albumVC.tabBarItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), tag: 2)
         searchVC = createViewController(title: "Search", imageName: "magnifyingglass", tag: 3)
+
+        navigationAlbumController = UINavigationController(rootViewController: albumVC)
 
         self.setViewControllers([libraryVC,
                                  forYouVC,
-                                 albumVC,
+                                 navigationAlbumController,
                                  searchVC
                                 ], animated: true)
     }
