@@ -46,4 +46,13 @@ struct ApiCell {
             CellModel(imageName: "square.stack.3d.forward.dottedline", labelName: "Animated", labelCount: "1", isLast: true)
         ]
     }
+
+    static func getCellsForUtilitiesSection() -> [CellModel] {
+        return [
+            CellModel(imageName: "square.and.arrow.down", labelName: "Imports", labelCount: "1"),
+            CellModel(imageName: "exclamationmark.icloud", labelName: "Unable to Upload", labelCount: "35"),
+            CellModel(imageName: "eye.slash", labelName: "Hidden", labelCount: "0"),
+            CellModel(imageName: "trash", labelName: "Recently Deleted", labelCount: "12", isLast: true)
+        ]
+    }
 }
