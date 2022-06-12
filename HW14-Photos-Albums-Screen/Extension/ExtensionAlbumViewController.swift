@@ -24,6 +24,8 @@ extension AlbumViewController {
                 cell.configure(with: itemIdentifier)
                 return cell
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as? ListCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
@@ -43,6 +45,8 @@ extension AlbumViewController {
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ListHeaderView.identifier, for: indexPath) as? ListHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
