@@ -15,6 +15,7 @@
 		DD1364B42856424E002C8818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1364B22856424E002C8818 /* LaunchScreen.storyboard */; };
 		DD1364C02856481F002C8818 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364BF2856481F002C8818 /* AlbumViewController.swift */; };
 		DD1364C228564C68002C8818 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */; };
+		DD1364C428564D1E002C8818 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C328564D1E002C8818 /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DD1364B52856424E002C8818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD1364BF2856481F002C8818 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD1364C328564D1E002C8818 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.release.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 		DD1364BE285644D3002C8818 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD1364C328564D1E002C8818 /* CellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */,
 				DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */,
 				DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */,
+				DD1364C428564D1E002C8818 /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
