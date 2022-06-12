@@ -65,6 +65,8 @@ extension AlbumViewController {
             switch sectionType {
             case .myAlbums:
                 return self.createMyAlbumsSectionLayout()
+            case .sharedAlbums:
+                return self.createSharedAlbumsSectionLayout()
             }
         }
 
@@ -92,6 +94,28 @@ extension AlbumViewController {
                                                                         alignment: .topLeading)
 
         let section = NSCollectionLayoutSection(group: containerGroup)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
+        section.boundarySupplementaryItems = [headerSection]
+        section.orthogonalScrollingBehavior = .groupPaging
+
+        return section
+    }
+
+    private func createSharedAlbumsSectionLayout() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 10)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.95), heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(52))
+        let headerSection = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: AlbumViewController.sectionHeaderElementKind,
+                                                                        alignment: .topLeading)
+
+        let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
         section.boundarySupplementaryItems = [headerSection]
         section.orthogonalScrollingBehavior = .groupPaging
