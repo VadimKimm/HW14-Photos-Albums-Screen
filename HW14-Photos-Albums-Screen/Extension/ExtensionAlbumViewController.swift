@@ -24,6 +24,8 @@ extension AlbumViewController {
                 cell.configure(with: itemIdentifier)
                 return cell
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as? ListCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
@@ -43,6 +45,8 @@ extension AlbumViewController {
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ListHeaderView.identifier, for: indexPath) as? ListHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
@@ -55,7 +59,7 @@ extension AlbumViewController {
 
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, CellModel> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, CellModel>()
-        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums, Section.mediatypes])
+        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums, Section.mediatypes, Section.utilities])
 
         let itemsForMyAlbumSection = ApiCell.getCellsForMyAlbumSection()
         snapshot.appendItems(itemsForMyAlbumSection, toSection: .myAlbums)
@@ -65,6 +69,9 @@ extension AlbumViewController {
 
         let itemsForMediaTypesSection = ApiCell.getCellsForMediaTypesSection()
         snapshot.appendItems(itemsForMediaTypesSection, toSection: .mediatypes)
+
+        let itemsForUtilitiesSection = ApiCell.getCellsForUtilitiesSection()
+        snapshot.appendItems(itemsForUtilitiesSection, toSection: .utilities)
 
         return snapshot
     }
@@ -85,6 +92,8 @@ extension AlbumViewController {
             case .sharedAlbums:
                 return self.createSharedAlbumsSectionLayout()
             case .mediatypes:
+                fallthrough
+            case .utilities:
                 return self.createListSectionLayout()
             }
         }
