@@ -10,7 +10,7 @@
 		AB286BB45F5D3848C5EE077B /* Pods_HW14_Photos_Albums_Screen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA5F3CEDD8923A61FD2F901 /* Pods_HW14_Photos_Albums_Screen.framework */; };
 		DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364A72856424E002C8818 /* AppDelegate.swift */; };
 		DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364A92856424E002C8818 /* SceneDelegate.swift */; };
-		DD1364AC2856424E002C8818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364AB2856424E002C8818 /* ViewController.swift */; };
+		DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364AB2856424E002C8818 /* MainTabBarController.swift */; };
 		DD1364B12856424E002C8818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD1364B02856424E002C8818 /* Assets.xcassets */; };
 		DD1364B42856424E002C8818 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1364B22856424E002C8818 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -21,7 +21,7 @@
 		DD1364A42856424E002C8818 /* HW14-Photos-Albums-Screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW14-Photos-Albums-Screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1364A72856424E002C8818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD1364A92856424E002C8818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD1364AB2856424E002C8818 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD1364AB2856424E002C8818 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DD1364B02856424E002C8818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD1364B32856424E002C8818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD1364B52856424E002C8818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			children = (
 				DD1364A72856424E002C8818 /* AppDelegate.swift */,
 				DD1364A92856424E002C8818 /* SceneDelegate.swift */,
-				DD1364AB2856424E002C8818 /* ViewController.swift */,
+				DD1364AB2856424E002C8818 /* MainTabBarController.swift */,
 				DD1364B02856424E002C8818 /* Assets.xcassets */,
 				DD1364B22856424E002C8818 /* LaunchScreen.storyboard */,
 				DD1364B52856424E002C8818 /* Info.plist */,
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD1364AC2856424E002C8818 /* ViewController.swift in Sources */,
+				DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */,
 				DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */,
 				DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */,
 			);
