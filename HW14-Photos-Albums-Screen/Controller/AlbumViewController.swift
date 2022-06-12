@@ -25,6 +25,7 @@ class AlbumViewController: UIViewController {
         super.viewDidLoad()
 
         configureCollectionView()
+        configureDataSource()
 
         setupHierarchy()
         setupLayout()
@@ -49,7 +50,6 @@ class AlbumViewController: UIViewController {
         title = "Albums"
         view.backgroundColor = UIColor.systemBackground
         setupNavigationController()
-        collectionView.backgroundColor = .green
     }
 
     // MARK: - Private functions -
@@ -62,9 +62,16 @@ class AlbumViewController: UIViewController {
     }
 
     private func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewLayout())
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.dataSource = dataSource
+
+        collectionView.register(PhotoCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+
+        collectionView.register(PhotoHeaderView.self,
+                                forSupplementaryViewOfKind: AlbumViewController.sectionHeaderElementKind,
+                                withReuseIdentifier: PhotoHeaderView.identifier)
     }
 
     @objc private func addButtonClick() {
