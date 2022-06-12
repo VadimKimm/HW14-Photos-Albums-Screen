@@ -13,6 +13,7 @@ class AlbumViewController: UIViewController {
     enum Section: String, CaseIterable {
         case myAlbums = "My Albums"
         case sharedAlbums = "Shared Albums"
+        case mediatypes = "Media Types"
     }
 
     static let sectionHeaderElementKind = "section-header-element-kind"
@@ -69,10 +70,15 @@ class AlbumViewController: UIViewController {
 
         collectionView.register(PhotoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        collectionView.register(ListCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ListCollectionViewCell.identifier)
 
         collectionView.register(PhotoHeaderView.self,
                                 forSupplementaryViewOfKind: AlbumViewController.sectionHeaderElementKind,
                                 withReuseIdentifier: PhotoHeaderView.identifier)
+        collectionView.register(ListHeaderView.self,
+                                forSupplementaryViewOfKind: AlbumViewController.sectionHeaderElementKind,
+                                withReuseIdentifier: ListHeaderView.identifier)
     }
 
     @objc private func addButtonClick() {

@@ -19,6 +19,8 @@
 		DD1364C728564DA7002C8818 /* ExtensionAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C628564DA7002C8818 /* ExtensionAlbumViewController.swift */; };
 		DD1364CA28564F06002C8818 /* ApiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364C928564F06002C8818 /* ApiCell.swift */; };
 		DD1364CC285650C1002C8818 /* PhotoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */; };
+		DD1364CE28565B40002C8818 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364CD28565B40002C8818 /* ListCollectionViewCell.swift */; };
+		DD1364D028565B60002C8818 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364CF28565B60002C8818 /* ListHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		DD1364C628564DA7002C8818 /* ExtensionAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAlbumViewController.swift; sourceTree = "<group>"; };
 		DD1364C928564F06002C8818 /* ApiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCell.swift; sourceTree = "<group>"; };
 		DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHeaderView.swift; sourceTree = "<group>"; };
+		DD1364CD28565B40002C8818 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD1364CF28565B60002C8818 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.release.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,8 @@
 			children = (
 				DD1364C128564C68002C8818 /* PhotoCollectionViewCell.swift */,
 				DD1364CB285650C1002C8818 /* PhotoHeaderView.swift */,
+				DD1364CD28565B40002C8818 /* ListCollectionViewCell.swift */,
+				DD1364CF28565B60002C8818 /* ListHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				DD1364CA28564F06002C8818 /* ApiCell.swift in Sources */,
 				DD1364AC2856424E002C8818 /* MainTabBarController.swift in Sources */,
 				DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */,
+				DD1364CE28565B40002C8818 /* ListCollectionViewCell.swift in Sources */,
 				DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */,
+				DD1364D028565B60002C8818 /* ListHeaderView.swift in Sources */,
 				DD1364C728564DA7002C8818 /* ExtensionAlbumViewController.swift in Sources */,
 				DD1364C428564D1E002C8818 /* CellModel.swift in Sources */,
 			);

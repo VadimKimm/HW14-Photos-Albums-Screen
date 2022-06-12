@@ -23,6 +23,10 @@ extension AlbumViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
+            case .mediatypes:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCollectionViewCell.identifier, for: indexPath) as? ListCollectionViewCell else { fatalError() }
+                cell.configure(with: itemIdentifier)
+                return cell
             }
         }
 
@@ -38,6 +42,10 @@ extension AlbumViewController {
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PhotoHeaderView.identifier, for: indexPath) as? PhotoHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
+            case .mediatypes:
+                guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ListHeaderView.identifier, for: indexPath) as? ListHeaderView else { fatalError() }
+                supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
+                return supplementaryView
             }
         }
 
@@ -47,13 +55,16 @@ extension AlbumViewController {
 
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, CellModel> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, CellModel>()
-        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums])
+        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums, Section.mediatypes])
 
         let itemsForMyAlbumSection = ApiCell.getCellsForMyAlbumSection()
         snapshot.appendItems(itemsForMyAlbumSection, toSection: .myAlbums)
 
         let itemsForPeopleAndPlacesSection = ApiCell.getCellsForSharedAlbumsSection()
         snapshot.appendItems(itemsForPeopleAndPlacesSection, toSection: .sharedAlbums)
+
+        let itemsForMediaTypesSection = ApiCell.getCellsForMediaTypesSection()
+        snapshot.appendItems(itemsForMediaTypesSection, toSection: .mediatypes)
 
         return snapshot
     }
@@ -73,6 +84,8 @@ extension AlbumViewController {
                 return self.createMyAlbumsSectionLayout()
             case .sharedAlbums:
                 return self.createSharedAlbumsSectionLayout()
+            case .mediatypes:
+                return self.createListSectionLayout()
             }
         }
 
@@ -125,6 +138,26 @@ extension AlbumViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
         section.boundarySupplementaryItems = [headerSection]
         section.orthogonalScrollingBehavior = .groupPaging
+
+        return section
+    }
+
+    private func createListSectionLayout() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.13))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(52))
+        let headerSection = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: AlbumViewController.sectionHeaderElementKind,
+                                                                        alignment: .topLeading)
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 30, trailing: 0)
+        section.boundarySupplementaryItems = [headerSection]
 
         return section
     }

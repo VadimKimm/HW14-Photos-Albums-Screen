@@ -31,4 +31,19 @@ struct ApiCell {
             CellModel(imageName: "image12", labelName: "Doge", labelCount: "243")
         ]
     }
+
+    static func getCellsForMediaTypesSection() -> [CellModel] {
+        return [
+            CellModel(imageName: "video", labelName: "Videos", labelCount: "191"),
+            CellModel(imageName: "person.crop.square", labelName: "Selfies", labelCount: "82"),
+            CellModel(imageName: "camera", labelName: "Live Photos", labelCount: "84"),
+            CellModel(imageName: "cube", labelName: "Portrait", labelCount: "49"),
+            CellModel(imageName: "dot.squareshape.split.2x2", labelName: "Panoramas", labelCount: "2"),
+            CellModel(imageName: "dial.min", labelName: "Slo-mo", labelCount: "3"),
+            CellModel(imageName: "square.stack.3d.down.forward", labelName: "Bursts", labelCount: "10"),
+            CellModel(imageName: "camera.viewfinder", labelName: "Screenshots", labelCount: "444"),
+            CellModel(imageName: "smallcircle.filled.circle", labelName: "Screen recordings", labelCount: "17"),
+            CellModel(imageName: "square.stack.3d.forward.dottedline", labelName: "Animated", labelCount: "1", isLast: true)
+        ]
+    }
 }
