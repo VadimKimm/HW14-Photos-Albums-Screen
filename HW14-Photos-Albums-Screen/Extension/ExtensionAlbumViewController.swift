@@ -7,6 +7,52 @@
 
 import UIKit
 
+// MARK: - Configure DataSource -
+
+extension AlbumViewController {
+
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, CellModel>(collectionView: collectionView)
+        { collectionView, indexPath, itemIdentifier in
+
+            let sectionType = Section.allCases[indexPath.section]
+            switch sectionType {
+            case .myAlbums:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { fatalError() }
+                cell.configure(with: itemIdentifier)
+                return cell
+            }
+        }
+
+        dataSource.supplementaryViewProvider = { (collectionView: UICollectionView,
+                                                  kind: String,
+                                                  indexPath: IndexPath) -> UICollectionReusableView? in
+
+            let sectionType = Section.allCases[indexPath.section]
+            switch sectionType {
+            case .myAlbums:
+                guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PhotoHeaderView.identifier, for: indexPath) as? PhotoHeaderView else { fatalError() }
+                supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
+                return supplementaryView
+            }
+        }
+
+        let snapshot = snapshotForCurrentState()
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+
+    func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, CellModel> {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, CellModel>()
+        snapshot.appendSections([Section.myAlbums])
+
+        let itemsForMyAlbumSection = ApiCell.getCellsForMyAlbumSection()
+        snapshot.appendItems(itemsForMyAlbumSection, toSection: .myAlbums)
+
+
+        return snapshot
+    }
+}
+
 // MARK: - Configure layout -
 
 extension AlbumViewController {
