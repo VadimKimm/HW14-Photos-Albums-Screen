@@ -18,6 +18,8 @@ extension AlbumViewController {
             let sectionType = Section.allCases[indexPath.section]
             switch sectionType {
             case .myAlbums:
+                fallthrough
+            case .sharedAlbums:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { fatalError() }
                 cell.configure(with: itemIdentifier)
                 return cell
@@ -31,6 +33,8 @@ extension AlbumViewController {
             let sectionType = Section.allCases[indexPath.section]
             switch sectionType {
             case .myAlbums:
+                fallthrough
+            case .sharedAlbums:
                 guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PhotoHeaderView.identifier, for: indexPath) as? PhotoHeaderView else { fatalError() }
                 supplementaryView.label.text = Section.allCases[indexPath.section].rawValue
                 return supplementaryView
@@ -43,11 +47,13 @@ extension AlbumViewController {
 
     func snapshotForCurrentState() -> NSDiffableDataSourceSnapshot<Section, CellModel> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, CellModel>()
-        snapshot.appendSections([Section.myAlbums])
+        snapshot.appendSections([Section.myAlbums, Section.sharedAlbums])
 
         let itemsForMyAlbumSection = ApiCell.getCellsForMyAlbumSection()
         snapshot.appendItems(itemsForMyAlbumSection, toSection: .myAlbums)
 
+        let itemsForPeopleAndPlacesSection = ApiCell.getCellsForSharedAlbumsSection()
+        snapshot.appendItems(itemsForPeopleAndPlacesSection, toSection: .sharedAlbums)
 
         return snapshot
     }
@@ -65,6 +71,8 @@ extension AlbumViewController {
             switch sectionType {
             case .myAlbums:
                 return self.createMyAlbumsSectionLayout()
+            case .sharedAlbums:
+                return self.createSharedAlbumsSectionLayout()
             }
         }
 
@@ -92,6 +100,28 @@ extension AlbumViewController {
                                                                         alignment: .topLeading)
 
         let section = NSCollectionLayoutSection(group: containerGroup)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
+        section.boundarySupplementaryItems = [headerSection]
+        section.orthogonalScrollingBehavior = .groupPaging
+
+        return section
+    }
+
+    private func createSharedAlbumsSectionLayout() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 10)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.95), heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(52))
+        let headerSection = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: AlbumViewController.sectionHeaderElementKind,
+                                                                        alignment: .topLeading)
+
+        let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0)
         section.boundarySupplementaryItems = [headerSection]
         section.orthogonalScrollingBehavior = .groupPaging

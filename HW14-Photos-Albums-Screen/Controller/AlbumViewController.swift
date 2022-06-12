@@ -12,6 +12,7 @@ class AlbumViewController: UIViewController {
 
     enum Section: String, CaseIterable {
         case myAlbums = "My Albums"
+        case sharedAlbums = "Shared Albums"
     }
 
     static let sectionHeaderElementKind = "section-header-element-kind"
