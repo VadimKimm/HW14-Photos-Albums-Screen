@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB286BB45F5D3848C5EE077B /* Pods_HW14_Photos_Albums_Screen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA5F3CEDD8923A61FD2F901 /* Pods_HW14_Photos_Albums_Screen.framework */; };
 		DD1364A82856424E002C8818 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364A72856424E002C8818 /* AppDelegate.swift */; };
 		DD1364AA2856424E002C8818 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364A92856424E002C8818 /* SceneDelegate.swift */; };
 		DD1364AC2856424E002C8818 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1364AB2856424E002C8818 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2D76BBBF8B060053D08246 /* Pods-HW14-Photos-Albums-Screen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.debug.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA5F3CEDD8923A61FD2F901 /* Pods_HW14_Photos_Albums_Screen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW14_Photos_Albums_Screen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1364A42856424E002C8818 /* HW14-Photos-Albums-Screen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW14-Photos-Albums-Screen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1364A72856424E002C8818 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD1364A92856424E002C8818 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		DD1364B02856424E002C8818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD1364B32856424E002C8818 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD1364B52856424E002C8818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW14-Photos-Albums-Screen.release.xcconfig"; path = "Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB286BB45F5D3848C5EE077B /* Pods_HW14_Photos_Albums_Screen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92F319636C1BC5234B0D4223 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF2D76BBBF8B060053D08246 /* Pods-HW14-Photos-Albums-Screen.debug.xcconfig */,
+				EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C063CE59F1A1EC095DE6E7B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEA5F3CEDD8923A61FD2F901 /* Pods_HW14_Photos_Albums_Screen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD13649B2856424E002C8818 = {
 			isa = PBXGroup;
 			children = (
 				DD1364A62856424E002C8818 /* HW14-Photos-Albums-Screen */,
 				DD1364A52856424E002C8818 /* Products */,
+				92F319636C1BC5234B0D4223 /* Pods */,
+				C063CE59F1A1EC095DE6E7B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD1364B82856424E002C8818 /* Build configuration list for PBXNativeTarget "HW14-Photos-Albums-Screen" */;
 			buildPhases = (
+				9F3B56AB6AD6B150F4963C5E /* [CP] Check Pods Manifest.lock */,
 				DD1364A02856424E002C8818 /* Sources */,
 				DD1364A12856424E002C8818 /* Frameworks */,
 				DD1364A22856424E002C8818 /* Resources */,
+				E97CD21C80203D9B1D0F4EDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F3B56AB6AD6B150F4963C5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HW14-Photos-Albums-Screen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E97CD21C80203D9B1D0F4EDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HW14-Photos-Albums-Screen/Pods-HW14-Photos-Albums-Screen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD1364A02856424E002C8818 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		DD1364B92856424E002C8818 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2D76BBBF8B060053D08246 /* Pods-HW14-Photos-Albums-Screen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		DD1364BA2856424E002C8818 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF9A124F5ABA3F635E6174DE /* Pods-HW14-Photos-Albums-Screen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
