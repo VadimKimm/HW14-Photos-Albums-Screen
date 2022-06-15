@@ -171,3 +171,12 @@ extension AlbumViewController {
         return section
     }
 }
+
+extension AlbumViewController {
+
+    private func determineIsWideMode() -> Bool {
+        let isWide = UIScreen.main.bounds.width > 450
+        return isWide
+    }
+}
+
