@@ -18,7 +18,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()
-        setupLayout()
         setupView()
     }
 
@@ -38,10 +37,6 @@ class MainTabBarController: UITabBarController {
                                  navigationAlbumController,
                                  searchViewController
                                 ], animated: true)
-    }
-
-    private func setupLayout() {
-
     }
 
     private func setupView() {
