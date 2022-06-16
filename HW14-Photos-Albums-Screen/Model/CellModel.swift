@@ -11,5 +11,5 @@ struct CellModel: Hashable {
     let imageName: String
     let labelName: String
     let labelCount: String
-    var isLast: Bool = false
+    var isLast = false
 }
