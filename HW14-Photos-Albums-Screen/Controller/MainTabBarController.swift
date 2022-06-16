@@ -9,39 +9,34 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    private var libraryVC: UIViewController!
-    private var forYouVC: UIViewController!
-    private var albumVC: UIViewController!
-    private var searchVC: UIViewController!
+    private var libraryViewController: UIViewController!
+    private var forYouViewController: UIViewController!
+    private var albumViewController: UIViewController!
+    private var searchViewController: UIViewController!
     private var navigationAlbumController: UINavigationController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()
-        setupLayout()
         setupView()
     }
 
     // MARK: - Settings -
 
     private func setupHierarchy() {
-        libraryVC = createViewController(title: "Library", imageName: "photo.fill.on.rectangle.fill", tag: 0)
-        forYouVC = createViewController(title: "For You", imageName: "heart.text.square.fill", tag: 1)
-        albumVC = AlbumViewController()
-        albumVC.tabBarItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), tag: 2)
-        searchVC = createViewController(title: "Search", imageName: "magnifyingglass", tag: 3)
+        libraryViewController = createViewController(title: "Library", imageName: "photo.fill.on.rectangle.fill", tag: 0)
+        forYouViewController = createViewController(title: "For You", imageName: "heart.text.square.fill", tag: 1)
+        albumViewController = AlbumViewController()
+        albumViewController.tabBarItem = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), tag: 2)
+        searchViewController = createViewController(title: "Search", imageName: "magnifyingglass", tag: 3)
 
-        navigationAlbumController = UINavigationController(rootViewController: albumVC)
+        navigationAlbumController = UINavigationController(rootViewController: albumViewController)
 
-        self.setViewControllers([libraryVC,
-                                 forYouVC,
+        self.setViewControllers([libraryViewController,
+                                 forYouViewController,
                                  navigationAlbumController,
-                                 searchVC
+                                 searchViewController
                                 ], animated: true)
-    }
-
-    private func setupLayout() {
-
     }
 
     private func setupView() {
